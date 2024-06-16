@@ -42,8 +42,21 @@
             - **Data Channels**: Create WebRTC data channels for sending and receiving messages.
             - **Real-Time Updates**: Use WebRTC for real-time chat updates without refreshing the page.
 
-  
-      
+## Setup Instructions
+
+### AWS Services
+To integrate AWS services such as DynamoDB, Lambda, and API Gateway, follow these steps:
+1. Set up an AWS account and configure the AWS CLI with your credentials.
+2. Create a DynamoDB table named `GSAAppData` with the specified attributes and keys.
+3. Deploy Lambda functions for the authentication, task, and chat endpoints using the AWS Management Console or AWS CLI.
+4. Set up API Gateway to route requests to the appropriate Lambda functions.
+
+### WebRTC
+For WebRTC integration, including signaling server setup and peer connections:
+1. Deploy a signaling server that can handle WebRTC offer, answer, and ICE candidate messages.
+2. Use the WebRTC API in the frontend to establish peer-to-peer connections between users.
+3. Implement data channels for sending and receiving messages in real-time.
+
 ## Frontend Screens
 1. **Home Screen**: 
    - Overview of all tasks.
@@ -83,7 +96,6 @@
 
 
 ## Additional Features
-- **Offline Mode**: Implement offline capabilities with local storage. (localstack)
-- **Push Notifications**: Integrate push notifications for real-time user updates.
-- **Error Handling**: Robust error handling and user feedback for smooth user experience.
-
+- **Offline Mode**: Implement offline capabilities with local storage. This allows users to access and modify tasks and chats even without an internet connection. Data is synchronized with the server once the connection is restored.
+- **Push Notifications**: Integrate push notifications for real-time user updates. This feature alerts users about new tasks, messages, or any other important updates.
+- **Error Handling**: Robust error handling and user feedback for smooth user experience. This includes clear messages for errors and successful actions, ensuring users are always informed about the state of their interactions.
